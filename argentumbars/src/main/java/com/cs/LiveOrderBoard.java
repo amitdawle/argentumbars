@@ -3,7 +3,6 @@ package com.cs;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.NavigableMap;
 import java.util.TreeMap;
@@ -36,7 +35,6 @@ public class LiveOrderBoard {
 		Order order = new Order(type, userId, quantity, price);
 		liveOrders.get(type).computeIfAbsent(price, (k)->new ArrayList<>()).add(order);
 		return order;
-		
 	}
 	
 	
@@ -61,7 +59,6 @@ public class LiveOrderBoard {
 	}
 	
 	
-	
 	public List<OrderSummary> summary(){
 		List <OrderSummary> result = new ArrayList<>();
 		
@@ -71,6 +68,7 @@ public class LiveOrderBoard {
 		return result;
 	}
 	
+
 	private void createOrderSummary(NavigableMap<Integer, List<Order>> orders, List<OrderSummary> result) {
 		
 		for(Entry<Integer, List<Order>> e: orders.entrySet() ){
@@ -79,16 +77,4 @@ public class LiveOrderBoard {
 			result.add(new OrderSummary(quantity, price));
 		}
 	}
-
-
-	int orderCount(OrderType type){
-		int count = 0;
-		Map<Integer, List<Order>> orders = liveOrders.get(type);
-		for(List<Order> o : orders.values()){
-			count += o.size();
-		}
-		return count;
-		
-	}
-	
 }
