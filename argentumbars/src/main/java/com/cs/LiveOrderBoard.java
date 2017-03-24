@@ -55,8 +55,8 @@ public class LiveOrderBoard {
         *  liveOrders ---> SELL --> |100 , (o1,o2)|
         *             |             |150 , (o3)|
         *             |              
-        *             |--> BUY --> | 110 , (o4, o5)|
-        *                          | 150, (o6) |
+        *             |--> BUY --> | 150, (o6) |           
+        *                          | 110 , (o4, o5)|
 	*/                          
 
 	private final NavigableMap<OrderType, NavigableMap<Integer, List<Order>>> liveOrders;
