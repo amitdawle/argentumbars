@@ -81,10 +81,10 @@ public class LiveOrderBoard {
 			throw new NullPointerException("userid must not be null");
 		}
 		if(quantity <= 0.0){
-			throw new IllegalArgumentException("qunatity must be gerater than 0");
+			throw new IllegalArgumentException("quantity must be greater than 0.0");
 		}
 		if(price <= 0){
-			throw new IllegalArgumentException("price must be gerater than 0");
+			throw new IllegalArgumentException("price must be greater than 0");
 		}
 		
 		Order order = new Order(type, userId, quantity, price);
